@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.katran.myrecipes.adapters.RecipesListAdapter
-import com.katran.myrecipes.data.Recipe
 import com.katran.myrecipes.databinding.FragmentRecipesListBinding
+import com.katran.myrecipes.network.NetworkClient
 
 class RecipesListFragment : Fragment() {
 
@@ -24,10 +24,13 @@ class RecipesListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val networkClient = NetworkClient()
+        networkClient.getRecipesList(10) {
+            val recipesListAdapter = RecipesListAdapter()
+            binding?.recipesList?.adapter = recipesListAdapter
+            recipesListAdapter.setList(it.recipes)
+        }
 
-        val recipesListAdapter: RecipesListAdapter = RecipesListAdapter()
-        binding?.recipesList?.adapter = recipesListAdapter
-        recipesListAdapter.setList(recipesList)
     }
 }
 

@@ -1,7 +1,6 @@
 package com.katran.myrecipes.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,12 +29,13 @@ class RecipeViewFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         bind()
     }
-    fun bind() {
+    private fun bind() {
         val networkClient = NetworkClient()
-        networkClient.getRandomRecipe { id, recipeTitle, recipeImage ->
-            Picasso.get().load(recipeImage).into(binding!!.recipeImage)
-            binding?.recipeName?.text = recipeTitle
-            Log.i("My Debug", "Random recipe binded")
+        networkClient.getRecipesList(1) { recipesList ->
+            val recipe = recipesList.recipes[0]
+            Picasso.get().load(recipe.image).into(binding!!.recipeImage)
+            binding?.recipeName?.text = recipe.title
+            binding?.recipeId?.text = recipe.id.toString()
 
         }
     }
