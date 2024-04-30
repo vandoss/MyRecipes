@@ -1,9 +1,10 @@
-package com.katran.myrecipes
+package com.katran.myrecipes.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import com.katran.myrecipes.R
 import com.katran.myrecipes.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +20,8 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.commit {
             setReorderingAllowed(true)
          //   add<ShoppingListFragment>(R.id.main_activity)
-            add<RecipesListFragment>(R.id.main_activity)
+            add<MainFragment>(R.id.main_activity)
+            addToBackStack("")
         }
     }
 }

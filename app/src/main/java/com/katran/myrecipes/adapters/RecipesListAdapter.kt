@@ -9,13 +9,15 @@ import com.katran.myrecipes.data.Product
 import com.katran.myrecipes.data.Recipe
 import com.katran.myrecipes.databinding.ItemProductBinding
 import com.katran.myrecipes.databinding.ItemRecipeBinding
+import com.squareup.picasso.Picasso
 
 class RecipesListAdapter : RecyclerView.Adapter<RecipesListAdapter.RecipesListViewHolder>(){
     class RecipesListViewHolder(
         private var itemRecipeBinding: ItemRecipeBinding
     ) : ViewHolder(itemRecipeBinding.root) {
         fun bind(item: Recipe) {
-            itemRecipeBinding.recipeName.text = item.name
+            itemRecipeBinding.itemRecipeName.text = item.title
+            Picasso.get().load(item.image).into(itemRecipeBinding.itemRecipeImage)
 
         }
     }

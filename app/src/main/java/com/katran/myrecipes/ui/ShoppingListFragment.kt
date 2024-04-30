@@ -1,4 +1,4 @@
-package com.katran.myrecipes
+package com.katran.myrecipes.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

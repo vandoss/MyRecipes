@@ -1,4 +1,4 @@
-package com.katran.myrecipes
+package com.katran.myrecipes.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.katran.myrecipes.adapters.RecipesListAdapter
 import com.katran.myrecipes.data.Recipe
-import com.katran.myrecipes.data.RecipeCategory
 import com.katran.myrecipes.databinding.FragmentRecipesListBinding
 
 class RecipesListFragment : Fragment() {
@@ -25,14 +24,6 @@ class RecipesListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val recipesList : List<Recipe> = listOf(
-            Recipe("Porridge", RecipeCategory.MAIN),
-            Recipe("Chicken Soup", RecipeCategory.SOUP),
-            Recipe("Fried Eggs", RecipeCategory.MAIN),
-            Recipe("Milk Shake", RecipeCategory.DESERT),
-            Recipe("Tea", RecipeCategory.DRINK)
-        )
 
         val recipesListAdapter: RecipesListAdapter = RecipesListAdapter()
         binding?.recipesList?.adapter = recipesListAdapter
