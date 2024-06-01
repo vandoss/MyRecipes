@@ -5,11 +5,19 @@
     <string name="recipes_list">Recipes List</string>
     <string name="random_recipe_menu_item">Random Recipe</string>
     <string name="recipes_list_menu_item">Recipes list</string>
-    <string name="shopping_list_menu_item">SHopping list</string>
+    <string name="shopping_list_menu_item">Shopping list</string>
     <string name="recipes_from_network">Recipes from Network</string>
     <string name="setting_alert_text">Go to settings and enter you Spoonacular Api Key</string>
     <string name="settings_alert_title">You need Api Key</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
+    <string name="add_new_recipe">Add new recipe</string>
+    <string name="recipe_image">Recipe image</string>
+    <string name="add_recipe_to_favorites">Add recipe to favorites</string>
+    <string name="add_recipe_to_shopping_cart">Add recipe\'s ingredients to shopping_cart</string>
+    <string name="ingredients">Ingredients:</string>
+    <string name="how_to_cook">How to cook:</string>
+    <string name="my_favorites">My favorites</string>
+    <string name="settings">Settings</string>
 
     <string-array name="listTypes">
         <item>List</item>

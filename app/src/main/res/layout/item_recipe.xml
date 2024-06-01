@@ -13,7 +13,8 @@
         android:layout_height="48dp"
         tools:src="@drawable/porridge"
         android:layout_weight="1"
-        android:id="@+id/item_recipe_image"/>
+        android:id="@+id/item_recipe_image"
+        android:contentDescription="@string/recipe_image"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -30,10 +31,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
-        android:src="@drawable/favorite_24dp"/>
+        android:src="@drawable/favorite_24dp"
+        android:id="@+id/add_recipe_to_favorites_button"
+        android:contentDescription="@string/add_recipe_to_favorites"/>
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
-        android:src="@drawable/add_shopping_cart_24dp"/>
+        android:src="@drawable/add_shopping_cart_24dp"
+        android:id="@+id/add_recipe_to_shopping_cart"
+        android:contentDescription="@string/add_recipe_to_shopping_cart"/>
 </LinearLayout>

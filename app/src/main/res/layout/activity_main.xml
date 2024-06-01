@@ -31,34 +31,40 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/public_48dp" />
+            android:src="@drawable/public_48dp"
+            android:contentDescription="@string/recipes_from_network"/>
 
         <ImageButton
             android:id="@+id/list_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/list_48dp"/>
+            android:src="@drawable/list_48dp"
+            android:contentDescription="@string/my_recipes"/>
 
         <ImageButton
             android:id="@+id/favorites_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/favorite_48dp" />
+            android:src="@drawable/favorite_48dp"
+            android:contentDescription="@string/my_favorites"/>
 
         <ImageButton
             android:id="@+id/shopping_list_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/shopping_cart_48dp" />
+            android:src="@drawable/shopping_cart_48dp"
+            android:contentDescription="@string/my_shopping_list"/>
+
         <ImageButton
             android:id="@+id/settings_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:src="@drawable/settings_48dp" />
+            android:src="@drawable/settings_48dp"
+            android:contentDescription="@string/settings"/>
 
     </LinearLayout>
 
