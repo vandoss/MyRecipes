@@ -4,47 +4,45 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.katran.myrecipes.R
-import com.katran.myrecipes.data.Product
 import com.katran.myrecipes.data.Recipe
-import com.katran.myrecipes.databinding.ItemProductBinding
 import com.katran.myrecipes.databinding.ItemRecipeBinding
+import com.katran.myrecipes.ui.NavigationListener
 import com.squareup.picasso.Picasso
 
-class RecipesListAdapter : RecyclerView.Adapter<RecipesListAdapter.RecipesListViewHolder>(){
+class RecipesListAdapter(private val listener: NavigationListener) : RecyclerView.Adapter<RecipesListAdapter.RecipesListViewHolder>(){
     class RecipesListViewHolder(
         private var itemRecipeBinding: ItemRecipeBinding
     ) : ViewHolder(itemRecipeBinding.root) {
-        fun bind(item: Recipe) {
+        fun bind(item: Recipe, listener: NavigationListener) {
             itemRecipeBinding.itemRecipeName.text = item.title
-            Picasso.get().load(item.image).into(itemRecipeBinding.itemRecipeImage)
-
+            if (item.image != "") {
+                Picasso.get().load(item.image).into(itemRecipeBinding.itemRecipeImage)
+            }
+            itemRecipeBinding.itemRecipe.setOnClickListener {
+                listener.openRecipe(item)
+            }
         }
     }
-
-
     private var recipeList: List<Recipe> = listOf()
-    var binding: ItemRecipeBinding? = null
+    private var binding: ItemRecipeBinding? = null
 
-    fun setList(list: List<Recipe>) {
-        recipeList = list
+    fun setList(list: List<Recipe>?) {
+        recipeList = list!!
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecipesListViewHolder {
         binding = ItemRecipeBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
-
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_recipe, parent, false)
-        return RecipesListAdapter.RecipesListViewHolder(binding!!)
+        return RecipesListViewHolder(binding!!)
     }
 
 
     override fun getItemCount(): Int = recipeList.size
 
     override fun onBindViewHolder(holder: RecipesListViewHolder, position: Int) {
-        holder.bind(recipeList[position])
+        holder.bind(recipeList[position], listener)
+
     }
 
 

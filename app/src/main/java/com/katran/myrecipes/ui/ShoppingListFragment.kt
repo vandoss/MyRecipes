@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.katran.myrecipes.adapters.ShoppingListAdapter
-import com.katran.myrecipes.data.Product
+import com.katran.myrecipes.data.Ingredient
 import com.katran.myrecipes.databinding.FragmentShoppingListBinding
 
 class ShoppingListFragment : Fragment() {
@@ -25,14 +25,14 @@ class ShoppingListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val shoppingList = listOf<Product>(
-            Product("Potato", 3f, "kilo"),
-            Product("Egg", 10f, "piece"),
-            Product("Tomato", 1.5f, "kilo"),
-            Product("Chicken", 1f, "piece")
+        val shoppingList = listOf(
+            Ingredient("Potato", 3f, "kilo"),
+            Ingredient("Egg", 10f, "piece"),
+            Ingredient("Tomato", 1.5f, "kilo"),
+            Ingredient("Chicken", 1f, "piece")
         )
 
-        val shoppingListAdapter: ShoppingListAdapter = ShoppingListAdapter()
+        val shoppingListAdapter = ShoppingListAdapter()
         binding?.shoppingList?.adapter = shoppingListAdapter
         shoppingListAdapter.setList(shoppingList)
     }

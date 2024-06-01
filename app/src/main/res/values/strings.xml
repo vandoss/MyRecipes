@@ -3,4 +3,16 @@
     <string name="my_recipes">My recipes</string>
     <string name="my_shopping_list">My Shopping List</string>
     <string name="recipes_list">Recipes List</string>
+    <string name="random_recipe_menu_item">Random Recipe</string>
+    <string name="recipes_list_menu_item">Recipes list</string>
+    <string name="shopping_list_menu_item">SHopping list</string>
+    <string name="recipes_from_network">Recipes from Network</string>
+    <string name="setting_alert_text">Go to settings and enter you Spoonacular Api Key</string>
+    <string name="settings_alert_title">You need Api Key</string>
+    <string name="ok">Ok</string>
+
+    <string-array name="listTypes">
+        <item>List</item>
+        <item>Grid</item>
+    </string-array>
 </resources>

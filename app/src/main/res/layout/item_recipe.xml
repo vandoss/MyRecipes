@@ -5,7 +5,8 @@
     android:orientation="horizontal"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="16dp"
-    android:gravity="end">
+    android:gravity="end"
+    android:id="@+id/item_recipe">
 
     <ImageView
         android:layout_width="48dp"
@@ -25,10 +26,14 @@
         android:layout_weight="50"
         android:id="@+id/item_recipe_name"/>
 
-    <ImageView
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_gravity="center"
-        android:layout_marginEnd="8dp"
-        android:src="@drawable/horizontal_ellipsis"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:src="@drawable/favorite_24dp"/>
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:src="@drawable/add_shopping_cart_24dp"/>
 </LinearLayout>

@@ -3,39 +3,63 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/main_activity">
+    android:background="@color/md_theme_background">
 
-    <Button
-        android:id="@+id/random_recipe_button"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Show random recipe"
-        android:textSize="26sp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/main_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintVertical_weight="1"/>
 
-    <Button
-        android:id="@+id/recipes_list_button"
-        android:layout_width="300dp"
+    <LinearLayout
+        android:id="@+id/bottom_navigation_container"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Show recipes list"
-        android:textSize="26sp"
-        android:layout_margin="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/random_recipe_button" />
+        android:background="@color/md_theme_onPrimaryFixedVariant"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/main_container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_weight="5">
 
-    <Button
-        android:id="@+id/shopping_list_button"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="Show shopping list"
-        android:textSize="26sp"
-        android:layout_margin="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipes_list_button" />
+        <ImageButton
+            android:id="@+id/network_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/public_48dp" />
+
+        <ImageButton
+            android:id="@+id/list_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/list_48dp"/>
+
+        <ImageButton
+            android:id="@+id/favorites_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/favorite_48dp" />
+
+        <ImageButton
+            android:id="@+id/shopping_list_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/shopping_cart_48dp" />
+        <ImageButton
+            android:id="@+id/settings_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/settings_48dp" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
